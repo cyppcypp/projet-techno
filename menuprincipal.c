@@ -6,7 +6,7 @@ int choixMode()
 {
     int mode=0;
 
-    printf("Mode de jeu: Taper 1 pour le mode NORMAL ou 2 pour le mode DEGRADE\n");
+    printf("~~~~~~Mode de jeu~~~~~~ \nTaper 1 pour le mode NORMAL ou 2 pour le mode DEGRADE\n");
 
 
     while(mode!=1 && mode!=2)
@@ -14,7 +14,7 @@ int choixMode()
         printf("Choisir le mode de jeu : ");
         scanf("%d", &mode);
     }
-    printf("MODE : %d\n", mode);
+
 
     if(mode==1)
         printf("Le jeu est en mode NORMAL \n");
@@ -92,7 +92,8 @@ void main()
             printf("\n");
             printf("\n");
 
-            { //PLATEAU
+            {
+                //PLATEAU
                 int tab[27][12] = {{0}};
                 int i;
                 int j;
@@ -112,10 +113,28 @@ void main()
                     printf("\n");
                 }
                 return ;
+            }
+
+            void main()
+            {
+
+                struct Joueur
+                {
+                    int Main[6];
+                    int scores;
+
+                };
+
+                struct tuiles
+                {
+                    int color;
+                    char symbole [10];
+                };
 
             }
         }
-            return ;
+
+        return ;
 
         break;
         case 3:
@@ -140,6 +159,6 @@ void main()
         }
 
     }
-    }
+}
 
 
