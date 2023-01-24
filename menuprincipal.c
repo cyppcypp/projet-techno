@@ -1,12 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX_SIZE_TAB
+
+int choixMode()
+{
+    int mode=0;
+
+    printf("Mode de jeu: Taper 1 pour le mode NORMAL ou 2 pour le mode DEGRADE\n");
+
+
+    while(mode!=1 && mode!=2)
+    {
+        printf("Choisir le mode de jeu : ");
+        scanf("%d", &mode);
+    }
+    printf("MODE : %d\n", mode);
+
+    if(mode==1)
+        printf("Le jeu est en mode NORMAL \n");
+
+    else if(mode==2)
+        printf("Le jeu est en mode DEGRADE \n");
+
+    return mode;
+}
+int choixNbJoueur()
+{
+    int nbJoueur=0;
+
+    printf("Nombre de Joueurs: 2,3 ou 4 ?\n");
+
+    while(nbJoueur!=2 && nbJoueur!=3 && nbJoueur!=4)
+    {
+        printf("Combien de Joueurs: ");
+        scanf("%d", &nbJoueur);
+    }
+    return nbJoueur;
+}
+
 
 void main()
 {
-    int choix;
-    while (1)
+    int choix=1;
+    while (choix !=5)
     {
-
+        //MENU
         printf("\n~~~~CHOIX D'UNE OPTION~~~~\n");
         printf("1) Reprendre une partie sauvegardee\n");
         printf("2) Demarrer une nouvelle partie\n");
@@ -14,6 +52,7 @@ void main()
         printf("4) Consulter les regles du jeu\n");
         printf("5) Quitter le jeu\n");
         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        fflush(stdin);
 
         scanf("%d", &choix);
 
@@ -24,7 +63,61 @@ void main()
             break;
         case 2:
             //demarer la partie: faire la fonction demarage du jeu ( case(fonction_demarrage) )
-            break;
+        {
+
+            int nbJoueur;
+            int mode;
+            char tabNom[4][50];
+            int i;
+
+            mode=choixMode();
+            nbJoueur=choixNbJoueur();
+
+            for(i=0; i<nbJoueur; i++)
+            {
+                printf("Choisir nom du Joueur %d: ", i+1);
+                scanf("%49s", tabNom[i]);
+            }
+
+            printf("Nombre de joueur %d \n",nbJoueur);
+            for(i=0; i<nbJoueur; i++)
+            {
+                printf("Nom du Joueur :  %s\n", tabNom[i]);
+            }
+            printf("\n");
+            printf("\n");
+            printf("\n");
+            printf("\n");
+            printf("\n");
+            printf("\n");
+            printf("\n");
+
+            { //PLATEAU
+                int tab[27][12] = {{0}};
+                int i;
+                int j;
+
+                printf("  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n");
+                for (i = 0; i<12; i++)
+                {
+                    printf("%d", i);
+                    for(j = 0; j<27; j++)
+                    {
+                        printf(" ");
+                        //if
+                        //else
+                        //print(" ");
+
+                    }
+                    printf("\n");
+                }
+                return ;
+
+            }
+        }
+            return ;
+
+        break;
         case 3:
             //Points
             break;
@@ -40,12 +133,13 @@ void main()
         case 5:
             printf("Vous avez quittez :(\n");
             printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-            return 0;
+            return;
             break;
 
 
         }
 
     }
+    }
 
-}
+
