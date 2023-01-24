@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Fonction choix du mode du jeu: Normal ou Degradé
+int choixMode(){
+int mode=0;
+
+    printf("Mode de jeu: Taper 1 pour le mode normal ou 2 pour le mode degrade\n");
+
+
+    while(mode!=1 && mode!=2){
+        printf("Choisir le mode de jeu :");
+        scanf("%d", &mode);
+    }
+    printf("mode choisi : %d\n", mode);
+
+    if(mode==1)
+        printf("Le jeu est en mode normal \n");
+
+    else if(mode==2)
+        printf("Le jeu est en mode degrade \n");
+
+    return mode;
+}
+
+//Fonction choix du nombre de Joueur
+int choixNbJoueur(){
+int nbJoueur=0;
+
+    printf("Nombre de Joueurs: 2,3 ou 4 ?\n");
+
+    while(nbJoueur!=2 && nbJoueur!=3 && nbJoueur!=4){
+        printf("Combien de Joueurs:");
+        scanf("%d", &nbJoueur);
+    }
+    printf("Nombre de Joueurs : %d\n", nbJoueur);
+
+
+    return nbJoueur;
+}
+
+//********Programme Principal
+int main(){
+int nbJoueur;
+int mode;
+char tabNom[4][50];
+int i;
+
+
+mode=choixMode();
+
+nbJoueur=choixNbJoueur();
+
+for(i=0;i<nbJoueur;i++)
+{
+    printf("Choisir nom du Joueur %d: ", i+1);
+    scanf("%49s", tabNom[i]);
+}
+
+printf("Nb de joueur %d \n",nbJoueur);
+for(i=0;i<nbJoueur;i++)
+{
+    printf("Nom du Joueur :  %s\n", tabNom[i]);
+}
+
+}
