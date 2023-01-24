@@ -39,7 +39,7 @@ void main()
             break;
         case 5:
             printf("Vous avez quittez :(\n");
-            printf("~~~~~~~~\n");
+            printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
             return 0;
             break;
 
