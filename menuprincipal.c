@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_SIZE_TAB
+typedef struct tuile{
+    int color;
+    int forme;
+}TU;
+
+typedef struct Joueur{
+    char nom[50];
+    TU main[6];
+    int score;
+}Tjoueur;
 
 int choixMode()
 {
@@ -42,6 +52,12 @@ int choixNbJoueur()
 void main()
 {
     int choix=1;
+            int nbJoueur;
+            int mode;
+            char tabNom[4][50];//inutile
+       //     JOUEur tab [4]; à mettre dans le jeu???
+            int i;
+
     while (choix !=5)
     {
         //MENU
@@ -65,21 +81,25 @@ void main()
             //demarer la partie: faire la fonction demarage du jeu ( case(fonction_demarrage) )
         {
 
-            int nbJoueur;
-            int mode;
-            char tabNom[4][50];
-            int i;
 
             mode=choixMode();
             nbJoueur=choixNbJoueur();
+            printf("Nombre de joueur %d \n",nbJoueur);
+            Tjoueur TabTU[6];
 
             for(i=0; i<nbJoueur; i++)
             {
                 printf("Choisir nom du Joueur %d: ", i+1);
                 scanf("%49s", tabNom[i]);
+
+
+
+
+
+
+ //saisir toutes les données du joueur et initialiser sa main
             }
 
-            printf("Nombre de joueur %d \n",nbJoueur);
             for(i=0; i<nbJoueur; i++)
             {
                 printf("Nom du Joueur :  %s\n", tabNom[i]);
@@ -95,10 +115,13 @@ void main()
             {
                 //PLATEAU
                 int tab[27][12] = {{0}};
+
+                //tableau de tuile et non d'entiers
+                //initialiser le jeu
                 int i;
                 int j;
 
-                printf("  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n");
+                printf("  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n");//dans l'affichage du plateau
                 for (i = 0; i<12; i++)
                 {
                     printf("%d", i);
@@ -111,31 +134,27 @@ void main()
 
                     }
                     printf("\n");
+
                 }
-                return ;
-            }
+                i=0;
+                Tjoueur TabTU[6];
 
-            void main()
-            {
+                printf("\n");
 
-                struct Joueur
-                {
-                    int Main[6];
-                    int scores;
+                printf("Joueur: %s", &tabNom[i]);
+                printf("\n");
+                printf("\n");
+                printf("\n");
+                printf("\n");
 
-                };
-
-                struct tuiles
-                {
-                    int color;
-                    char symbole [10];
-                };
+                return tabNom[i];
+                int TU main[0]=1;
+                printf("\n Votre main: %s", &TabTU->main[0]);
 
             }
         }
 
         return ;
-
         break;
         case 3:
             //Points
@@ -154,7 +173,6 @@ void main()
             printf("~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
             return;
             break;
-
 
         }
 
