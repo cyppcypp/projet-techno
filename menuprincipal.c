@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_SIZE_TAB
-typedef struct tuile{
+typedef struct tuile
+{
     int color;
     int forme;
-}TU;
+} TU;
 
-typedef struct Joueur{
+typedef struct Joueur
+{
     char nom[50];
     TU main[6];
     int score;
-}Tjoueur;
+} Tjoueur;
 
 int choixMode()
 {
@@ -52,11 +54,11 @@ int choixNbJoueur()
 void main()
 {
     int choix=1;
-            int nbJoueur;
-            int mode;
-            char tabNom[4][50];//inutile
-       //     JOUEur tab [4]; à mettre dans le jeu???
-            int i;
+    int nbJoueur;
+    int mode;
+    char tabNom[4][50];//inutile
+    //     JOUEur tab [4]; à mettre dans le jeu???
+    int i;
 
     while (choix !=5)
     {
@@ -97,7 +99,7 @@ void main()
 
 
 
- //saisir toutes les données du joueur et initialiser sa main
+//saisir toutes les données du joueur et initialiser sa main
             }
 
             for(i=0; i<nbJoueur; i++)
@@ -146,11 +148,6 @@ void main()
                 printf("\n");
                 printf("\n");
                 printf("\n");
-
-                return tabNom[i];
-                int TU main[0]=1;
-                printf("\n Votre main: %s", &TabTU->main[0]);
-
             }
         }
 
@@ -178,5 +175,3 @@ void main()
 
     }
 }
-
-
